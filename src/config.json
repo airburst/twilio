@@ -1,8 +1,6 @@
 {
-	"port": 8080,
+	"port": 4001,
 	"bodyLimit": "100kb",
 	"corsHeaders": ["Link"],
-	"SID": "AC1e9c33f64e7c148ae9e61849addff85b",
-	"AUTH_TOKEN": "ad1f36b7439b92b18752189b4897316f",
-	"SENDING_NUMBER": "+442380000459"
+	"sendingNumber": "442380000459"
 }
