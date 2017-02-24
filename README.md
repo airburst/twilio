@@ -5,12 +5,14 @@ A simple API to send SMS messages.  REST endpoints are as follows:
 
 ## Send an SMS Message
 
+Send to a number, with international dialing code and no spaces.
+
 **POST** to `{url}/sms`
 
 Body
 ```
 {
-    "to": _telephone number with code e.g. +4477777123456_ ,
+    "to": "+4477777123456",
     "message": "Some interesting message text"
 }
 ```
