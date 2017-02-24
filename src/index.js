@@ -26,7 +26,7 @@ app.use(bodyParser.json({
 app.use(middleware({ config }));
 
 // api router
-app.use('/api', api({ config }));
+app.use('/', api({ config }));
 
 app.server.listen(process.env.PORT || config.port);
 
