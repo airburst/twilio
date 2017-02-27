@@ -22,5 +22,9 @@ Body
 Hosted on Docker Hub at [airburst/sms-api](https://hub.docker.com/r/airburst/sms-api/)
 
 ```
-docker run -d -p4001:4001 -e "TWILIO_ACCOUNT_SID={Your SID}" -e "TWILIO_AUTH_TOKEN={Your auth token}" airburst/sms-api
+docker run -d -p4001:4001 _
+    -e "TWILIO_ACCOUNT_SID={Your SID}" _ 
+    -e "TWILIO_AUTH_TOKEN={Your auth token}" _ 
+    -e "TWILIO_REPLY_MESSAGE={Your SMS reply text}" _ 
+    airburst/sms-api
 ```
