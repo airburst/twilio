@@ -7,13 +7,15 @@ import * as firebase from 'firebase';
 import middleware from './middleware';
 import api from './api';
 import conf from './config.json';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Initialize Firebase
 let fbConfig = {
-	apiKey: 'AIzaSyDEhygbxSunTT1xJHaQXa9LO3rE94QLHbE',
-	authDomain: 'sms-chat-138bf.firebaseapp.com',
-	databaseURL: 'https://sms-chat-138bf.firebaseio.com',
-	messagingSenderId: '43598407954'
+	apiKey: process.env.FIREBASE_API_KEY,
+	authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+	databaseURL: process.env.FIREBASE_URL,
+	messagingSenderId: process.env.FIREBASE_SENDER_ID
 };
 let Firebase = firebase.initializeApp(fbConfig);
 let ref = Firebase.database().ref('chat');

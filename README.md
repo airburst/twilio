@@ -1,13 +1,19 @@
 Twilio SMS API
 ==================================
 
-A simple API to send SMS messages.  REST endpoints are as follows:
+A simple API to send SMS messages and store inbound and outbound chat threads in a Firebase app.  
+
+REST endpoints are as follows:
 
 ## Send an SMS Message
 
 Send to a number, with international dialing code and no spaces.
 
 **POST** to `{url}/sms`
+
+Twilio inbound web hook
+
+**POST** to `{url}/inbound` 
 
 Body
 ```
@@ -26,5 +32,9 @@ docker run -d -p4001:4001 _
     -e "TWILIO_ACCOUNT_SID={Your SID}" _ 
     -e "TWILIO_AUTH_TOKEN={Your auth token}" _ 
     -e "TWILIO_REPLY_MESSAGE={Your SMS reply text}" _ 
+    -e "FIREBASE_API_KEY={Your Firebase api key} _
+    -e "FIREBASE_AUTH_DOMAIN={Your Firebase auth domain} _
+    -e "FIREBASE_URL={Your Firebase app url} _
+    -e "FIREBASE_SENDER_ID={Your Firebase sender id} _
     airburst/sms-api
 ```
