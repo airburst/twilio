@@ -18,7 +18,7 @@ export default ({ config }) => resource({
         let message = query.Body,
             from = query.From;
         reply(res);
-        logMessage(from, message, config);
+        logMessage('in', from, message, config);
     },
 
     // Respond to Inbound SMS via POST
@@ -26,7 +26,7 @@ export default ({ config }) => resource({
         let message = body.Body,
             from = body.From;
         reply(res);
-        logMessage(from, message, config);
+        logMessage('in', from, message, config);
     }
 
 });

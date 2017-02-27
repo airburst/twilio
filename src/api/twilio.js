@@ -18,7 +18,7 @@ export default ({ config }) => resource({
             if (err) {
                 res.json(err);
             } else {
-                logMessage(data.to, data.body, config);     // URI encode?
+                logMessage('out', data.to, data.body, config);     // URI encode?
                 res.json(data);
             }
         });
