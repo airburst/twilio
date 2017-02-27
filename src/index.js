@@ -3,9 +3,23 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
+import * as firebase from 'firebase';
 import middleware from './middleware';
 import api from './api';
-import config from './config.json';
+import conf from './config.json';
+
+// Initialize Firebase
+let fbConfig = {
+	apiKey: 'AIzaSyDEhygbxSunTT1xJHaQXa9LO3rE94QLHbE',
+	authDomain: 'sms-chat-138bf.firebaseapp.com',
+	databaseURL: 'https://sms-chat-138bf.firebaseio.com',
+	messagingSenderId: '43598407954'
+};
+let Firebase = firebase.initializeApp(fbConfig);
+let ref = Firebase.database().ref('chat');
+
+// Package Firebase ref into config
+let config = Object.assign(conf, { ref: ref });
 
 let app = express();
 app.server = http.createServer(app);

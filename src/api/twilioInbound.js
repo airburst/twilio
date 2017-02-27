@@ -1,6 +1,7 @@
 import resource from 'resource-router-middleware';
 import twilio from 'twilio';
 import dotenv from 'dotenv';
+import logMessage from '../lib/logMessage';
 dotenv.config();
 
 const reply = (res) => {
@@ -14,19 +15,18 @@ export default ({ config }) => resource({
 
     // Respond to Inbound SMS via GET
     index({ query }, res) {
-        let body = query.Body,
+        let message = query.Body,
             from = query.From;
         reply(res);
+        logMessage(from, message, config);
     },
 
     // Respond to Inbound SMS via POST
     create({ body }, res) {
         let message = body.Body,
             from = body.From;
-
-        console.log(message, from)                                         //
-
         reply(res);
+        logMessage(from, message, config);
     }
 
 });
